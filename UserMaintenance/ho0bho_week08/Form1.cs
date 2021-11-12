@@ -93,10 +93,11 @@ namespace ho0bho_week08
 
         private void btnSelectPresent_Click(object sender, EventArgs e)
         {
-            Factory = new PresentFactory
-            {
-                BallColor = btnColor.BackColor
-            };
+                Factory = new PresentFactory()
+                {
+                    BoxColor = btnColorPresent.BackColor,
+                    RibbonColor = btnColorRibbon.BackColor,
+                };
         }
     }
 }

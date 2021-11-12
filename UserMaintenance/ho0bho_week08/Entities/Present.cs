@@ -10,16 +10,22 @@ namespace ho0bho_week08.Entities
 {
     public class Present : Toy
     {
-        public SolidBrush PresentColor { get; private set; }
+        public SolidBrush BoxColor { get; private set; }
+        public SolidBrush RibbonColor { get; private set; }
 
-        public Present(Color color)
+        public Present(Color color, Color color2)
         {
-            PresentColor = new SolidBrush(color);
+            BoxColor = new SolidBrush(color);
+            RibbonColor = new SolidBrush(color2);
         }
 
         protected override void DrawImage(Graphics g)
         {
-            g.FillEllipse(PresentColor, 0, 0, Width, Height);
+            {
+                g.FillRectangle(BoxColor, 0, 0, Width, Height);
+                g.FillRectangle(RibbonColor, 0, Height * 0.4f, Width, Height * 0.2f);
+                g.FillRectangle(RibbonColor, Width * 0.4f, 0, Width * 0.2f, Height);
+            }
         }
     }
 }
