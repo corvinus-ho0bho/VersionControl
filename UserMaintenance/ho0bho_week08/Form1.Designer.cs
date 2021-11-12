@@ -46,11 +46,13 @@ namespace ho0bho_week08
             // 
             this.createTimer.Enabled = true;
             this.createTimer.Interval = 3000;
+            this.createTimer.Tick += new System.EventHandler(this.createTimer_Tick);
             // 
             // conveyorTimer
             // 
             this.conveyorTimer.Enabled = true;
             this.conveyorTimer.Interval = 10;
+            this.conveyorTimer.Tick += new System.EventHandler(this.conveyorTimer_Tick);
             // 
             // Form1
             // 
