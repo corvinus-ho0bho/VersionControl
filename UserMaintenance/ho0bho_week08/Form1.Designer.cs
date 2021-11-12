@@ -37,6 +37,9 @@ namespace ho0bho_week08
             this.btnSelectBall = new System.Windows.Forms.Button();
             this.lblNext = new System.Windows.Forms.Label();
             this.btnColor = new System.Windows.Forms.Button();
+            this.btnSelectPresent = new System.Windows.Forms.Button();
+            this.btnColorPresent = new System.Windows.Forms.Button();
+            this.btnColorRibbon = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -81,7 +84,7 @@ namespace ho0bho_week08
             // lblNext
             // 
             this.lblNext.AutoSize = true;
-            this.lblNext.Location = new System.Drawing.Point(334, 12);
+            this.lblNext.Location = new System.Drawing.Point(459, 12);
             this.lblNext.Name = "lblNext";
             this.lblNext.Size = new System.Drawing.Size(91, 17);
             this.lblNext.TabIndex = 2;
@@ -89,7 +92,7 @@ namespace ho0bho_week08
             // 
             // btnColor
             // 
-            this.btnColor.BackColor = System.Drawing.Color.LightCoral;
+            this.btnColor.BackColor = System.Drawing.Color.Fuchsia;
             this.btnColor.Location = new System.Drawing.Point(161, 104);
             this.btnColor.Name = "btnColor";
             this.btnColor.Size = new System.Drawing.Size(111, 30);
@@ -97,11 +100,44 @@ namespace ho0bho_week08
             this.btnColor.UseVisualStyleBackColor = false;
             this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
+            // btnSelectPresent
+            // 
+            this.btnSelectPresent.Location = new System.Drawing.Point(310, 12);
+            this.btnSelectPresent.Name = "btnSelectPresent";
+            this.btnSelectPresent.Size = new System.Drawing.Size(111, 86);
+            this.btnSelectPresent.TabIndex = 4;
+            this.btnSelectPresent.Text = "PRESENT";
+            this.btnSelectPresent.UseVisualStyleBackColor = true;
+            this.btnSelectPresent.Click += new System.EventHandler(this.btnSelectPresent_Click);
+            // 
+            // btnColorPresent
+            // 
+            this.btnColorPresent.BackColor = System.Drawing.Color.Red;
+            this.btnColorPresent.Location = new System.Drawing.Point(310, 104);
+            this.btnColorPresent.Name = "btnColorPresent";
+            this.btnColorPresent.Size = new System.Drawing.Size(111, 30);
+            this.btnColorPresent.TabIndex = 5;
+            this.btnColorPresent.UseVisualStyleBackColor = false;
+            this.btnColorPresent.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnColorRibbon
+            // 
+            this.btnColorRibbon.BackColor = System.Drawing.Color.Yellow;
+            this.btnColorRibbon.Location = new System.Drawing.Point(310, 140);
+            this.btnColorRibbon.Name = "btnColorRibbon";
+            this.btnColorRibbon.Size = new System.Drawing.Size(111, 30);
+            this.btnColorRibbon.TabIndex = 6;
+            this.btnColorRibbon.UseVisualStyleBackColor = false;
+            this.btnColorRibbon.Click += new System.EventHandler(this.btnColor_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnColorRibbon);
+            this.Controls.Add(this.btnColorPresent);
+            this.Controls.Add(this.btnSelectPresent);
             this.Controls.Add(this.btnColor);
             this.Controls.Add(this.lblNext);
             this.Controls.Add(this.btnSelectBall);
@@ -123,6 +159,9 @@ namespace ho0bho_week08
         private System.Windows.Forms.Button btnSelectBall;
         private System.Windows.Forms.Label lblNext;
         private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.Button btnSelectPresent;
+        private System.Windows.Forms.Button btnColorPresent;
+        private System.Windows.Forms.Button btnColorRibbon;
     }
 }
 

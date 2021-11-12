@@ -90,5 +90,13 @@ namespace ho0bho_week08
                 return;
             button.BackColor = colorPicker.Color;
         }
+
+        private void btnSelectPresent_Click(object sender, EventArgs e)
+        {
+            Factory = new PresentFactory
+            {
+                BallColor = btnColor.BackColor
+            };
+        }
     }
 }
