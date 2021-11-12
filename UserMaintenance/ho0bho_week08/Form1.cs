@@ -18,7 +18,7 @@ namespace ho0bho_week08
         public BallFactory Factory
         {
             get { return _factory;  }
-            set { }
+            set { _factory = value; }
         }
         public Form1()
         {
