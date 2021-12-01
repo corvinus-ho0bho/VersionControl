@@ -21,9 +21,12 @@ namespace Microsimulation
         {
             InitializeComponent();
 
-            Population = GetPopulation(@"C:\Temp\nép.csv");
+            Population = GetPopulation(@"C:\Temp\nép-teszt.csv");
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
+
+           // dataGridView1.DataSource = Population;
+            
         }
         public List<Person> GetPopulation(string csvpath)
         {
@@ -57,8 +60,8 @@ namespace Microsimulation
                     birthProbabilities.Add(new BirthProbability()
                     {
                         Age = int.Parse(line[0]),
-                        NbrOfChildren = int.Parse(line[2]),
-                        BProbability = double.Parse(line[3])
+                        NbrOfChildren = int.Parse(line[1]),
+                        BProbability = double.Parse(line[2])
                     });
                 }
             }
@@ -78,8 +81,8 @@ namespace Microsimulation
                     deathProbabilities.Add(new DeathProbability()
                     {
                         Age = int.Parse(line[0]),
-                        NbrOfChildren = int.Parse(line[2]),
-                        DProbability = double.Parse(line[3])
+                        NbrOfChildren = int.Parse(line[1]),
+                        DProbability = double.Parse(line[2])
                     });
                 }
             }
