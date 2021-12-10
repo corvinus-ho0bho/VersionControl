@@ -13,10 +13,11 @@ namespace ho0bho_week10
 {
     public partial class Form1 : Form
     {
-        Brain winnerBrain = null;
+       
 
         GameController gc = new GameController();
-        GameArea ga;
+        GameArea ga = null;
+        Brain winnerBrain = null;
         int populationSize = 100;
         int nbrOfSteps = 10;
         int nbrOfStepsIncrement = 10;
@@ -45,7 +46,18 @@ namespace ho0bho_week10
             var playerList = from p in gc.GetCurrentPlayers()
                              orderby p.GetFitness() descending
                              select p;
-            var topPerformers = playerList.Take(populationSize / 2).ToList();
+            var topPerformers = playerList.Take(playerList.Count() / 2).ToList();
+
+            var winners = from p in topPerformers
+                          where p.IsWinner
+                          select p;
+            if (winners.Count() > 0)
+            {
+                winnerBrain = winners.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                return;
+            }
+
             gc.ResetCurrentLevel();
             foreach (var p in topPerformers)
             {
@@ -61,6 +73,15 @@ namespace ho0bho_week10
                     gc.AddPlayer(b.Mutate());
             }
             gc.Start();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gc.ResetCurrentLevel();
+            gc.AddPlayer(winnerBrain.Clone());
+            gc.AddPlayer();
+            ga.Focus();
+            gc.Start(true);
         }
     }
 }
